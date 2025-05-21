@@ -11,6 +11,7 @@
 
 - 🔐 Time-based One-Time Password (TOTP)
 - 📱 Works with Google Authenticator, Microsoft Authenticator, Authy, etc.
+- 📷 QR code for TOTP setup.
 - 🔁 Backup codes generation and validation
 - 🔒 SHA-256 hashing for secure storage
 - 🧩 Minimal dependencies and TypeScript support
@@ -32,6 +33,16 @@ yarn add mfa-lib
 ---
 
 ## 🚀 Usage
+
+### Generate MFA Secret and Qrcode
+
+```ts
+import { authenticator, generateQrCode } from 'mfa-lib';
+
+const secret = authenticator.generateSecret()
+const otpAuth = authenticator.keyuri("username-or-id", "your-app-name", secret)
+const qrCode = await generateQrCode(otpAuth) // return base64 image
+```
 
 ### Generate MFA Secret and OTP
 

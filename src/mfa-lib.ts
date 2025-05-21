@@ -1,8 +1,25 @@
 import { createHash, randomBytes } from "crypto";
 import { authenticator } from "otplib";
 import { BackupCode, UpdatedBackupCode } from "./types";
+import * as qrcode from 'qrcode';
 
 export { authenticator }
+
+/**
+ * Generates a QR code data URL for a given OTP auth URI.
+ *
+ * This is typically used to create a scannable QR code for setting up TOTP
+ * authentication in apps like Google Authenticator or Microsoft Authenticator.
+ *
+ * @param otpAuth - The OTP Auth URI string (e.g. `otpauth://totp/...`)
+ * @returns A Promise that resolves to a base64-encoded image data URL
+ *
+ * @example
+ * const qrCode = await generateQrCode(otpAuthUri);
+ */
+export async function generateQrCode(otpAuthUri: string) {
+   return await qrcode.toDataURL(otpAuthUri)
+}
 
 /**
  * Generates a set of backup codes and their hashed counterparts.
