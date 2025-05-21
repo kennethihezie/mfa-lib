@@ -17,7 +17,7 @@ export { authenticator }
  * @example
  * const qrCode = await generateQrCode(otpAuthUri);
  */
-export async function generateQrCode(otpAuthUri: string) {
+export async function generateQrCode(otpAuthUri: string): Promise<string> {
    return await qrcode.toDataURL(otpAuthUri)
 }
 
