@@ -9,7 +9,7 @@
 
 ## ✨ Features
 
-- 🔐 Time-based One-Time Password (TOTP) support using `otplib`
+- 🔐 Time-based One-Time Password (TOTP)
 - 📱 Works with Google Authenticator, Microsoft Authenticator, Authy, etc.
 - 🔁 Backup codes generation and validation
 - 🔒 SHA-256 hashing for secure storage
