@@ -1,6 +1,6 @@
 {
   "name": "mfa-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lightweight, secure MFA (TOTP) + backup codes utility for Node.js / NestJS apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
